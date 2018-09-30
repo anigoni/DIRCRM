@@ -8,11 +8,11 @@ class HeadOpportunity extends Model
 {
     //
 
-    protected $primaryKey = 'idHeadOpportunity';
+    //protected $primaryKey = 'idHeadOpportunity';
 
     public function customer(){
 
-        return $this->belongsTo('App\Agency'); //offerta appartiene a un customer: rel onetomany
+        return $this->belongsTo('App\Customer'); //offerta appartiene a un customer: rel onetomany
 
     }
 

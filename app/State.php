@@ -8,5 +8,5 @@ class State extends Model
 {
     //
 
-    protected $primaryKey = 'idState';
+    //protected $primaryKey = 'idState';
 }

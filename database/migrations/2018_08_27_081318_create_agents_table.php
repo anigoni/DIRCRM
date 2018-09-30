@@ -14,16 +14,18 @@ class CreateAgentsTable extends Migration
     public function up()
     {
         Schema::create('agents', function (Blueprint $table) {
-            $table->increments('idAgent');
-            $table->integer('idAgency')->index()->unsigned()->nullable(); //relazione onetomany con Agency
+            $table->increments('id');
+            $table->integer('agency_id')->index()->unsigned()->nullable(false); //relazione onetomany con Agency
             $table->integer('is_active')->defautl(0); //0=inactive, 1=active
-            $table->string('Nome', 30);
-            $table->string('Cognome', 30);
-            $table->string('Telefono', 20);
-            $table->string('Cellulare', 20);
-            $table->string('email', 30);
+            $table->string('Nome', 50)->nullable(true);
+            $table->string('Cognome', 50)->nullable(false);
+            $table->string('Telefono', 30)->nullable(true);
+            $table->string('Cellulare', 30)->nullable(true);
+            $table->string('email', 100)->nullable(true);
             $table->timestamps();
         });
+
+
     }
 
     /**

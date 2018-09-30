@@ -14,15 +14,16 @@ class CreateAgenciesTable extends Migration
     public function up()
     {
         Schema::create('agencies', function (Blueprint $table) {
-            $table->increments('idAgency');
-            $table->string('RagSociale', 100);
-            $table->string('Riferimento', 30);
-            $table->string('Telefono', 15);
-            $table->string('email', 15);
-            $table->string('Indirizzo', 100);
-            $table->string('Citta', 30);
-            $table->string('Provincia', 15);
-            $table->string('Regione', 30);
+            $table->increments('id');
+            $table->string('RagSociale', 100)->nullable(false);
+            $table->string('Riferimento', 50)->nullable(true);
+            $table->string('Telefono', 30)->nullable(true);
+            $table->string('email', 100)->nullable(true);
+            $table->string('Indirizzo', 150)->nullable(true);
+            $table->string('Citta', 50)->nullable(true);
+            $table->string('CAP', 10)->nullable(true);
+            $table->string('Provincia', 30)->nullable(true);
+            $table->string('Regione', 30)->nullable(true);
             $table->timestamps();
         });
     }

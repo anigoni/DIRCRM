@@ -8,7 +8,21 @@ class Agent extends Model
 {
     //
 
-    protected $primaryKey = 'idAgent';
+    //protected $primaryKey = 'idAgent';
+
+    protected $fillable=[
+
+        'id',
+        'agency_id',
+        'is_active',
+        'Nome',
+        'Cognome',
+        'Telefono',
+        'Cellulare',
+        'email'
+
+    ];
+
 
     public function agency(){
 

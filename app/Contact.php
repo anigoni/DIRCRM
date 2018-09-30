@@ -8,7 +8,21 @@ class Contact extends Model
 {
     //
 
-    protected $primaryKey = 'idContact';
+    //protected $primaryKey = 'idContact';
+
+    protected $fillable=[
+
+        'id',
+        'customer_id',
+        'Nome',
+        'Cognome',
+        'Telefono',
+        'Cellulare',
+        'email',
+        'Notes'
+
+    ];
+
 
     public function customer(){
 

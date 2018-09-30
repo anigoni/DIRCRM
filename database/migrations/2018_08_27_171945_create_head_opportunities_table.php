@@ -14,17 +14,17 @@ class CreateHeadOpportunitiesTable extends Migration
     public function up()
     {
         Schema::create('head_opportunities', function (Blueprint $table) {
-            $table->increments('idHeadOpportunity');
-            $table->integer('idState')->index()->unsigned()->nullable(); //stato offerta, es: In Corso, Annullata, Vinta, Persa, ecc...
-            $table->integer('idCustomer')->index()->unsigned()->nullable(); //offerta appartiene a un cliente
-            $table->integer('idContact')->index()->unsigned()->nullable(); //offerta associata a un contatto del cliente
-            $table->integer('idAgent')->index()->unsigned()->nullable(); //offerta associata a un agente
-            $table->String('NrOpportunity', 15);
+            $table->increments('id');
+            $table->integer('state_id')->index()->unsigned()->nullable(false); //stato offerta, es: In Corso, Annullata, Vinta, Persa, ecc...
+            $table->integer('customer_id')->index()->unsigned()->nullable(false); //offerta appartiene a un cliente
+            $table->integer('contact_id')->index()->unsigned()->nullable(true); //offerta associata a un contatto del cliente
+            $table->integer('agent_id')->index()->unsigned()->nullable(true); //offerta associata a un agente
+            $table->String('NrOpportunity', 15)->nullable(true);
             $table->String('Object', 100);
             $table->date('DataCreazione');
             $table->date('DataChiusura');
             $table->decimal('Total', 8, 2); //totale opportunity previsto
-            $table->text('Notes', 250); //note relative alla offerta
+            $table->text('Notes', 250)->nullable(true); //note relative alla offerta
 
             $table->timestamps();
         });
