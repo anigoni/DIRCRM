@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Agency;
+use App\User;
 use Illuminate\Http\Request;
 
-class AdminAgenciesController extends Controller
+class AdminUsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class AdminAgenciesController extends Controller
     {
         //
 
-        $agencies=Agency::all();
+        $users = User::all();
 
-        return view('admin.agencies.index', compact('agencies'));
+        return view('admin.users.index', compact('users'));
 
     }
 
@@ -30,7 +30,7 @@ class AdminAgenciesController extends Controller
     public function create()
     {
         //
-        return view('admin.agencies.create');
+        return view('admin.users.create');
     }
 
     /**

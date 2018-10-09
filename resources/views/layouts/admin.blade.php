@@ -31,7 +31,7 @@
 
 <body id="admin-page">
 
-<div id="wrapper">
+{{--<div id="wrapper">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -292,35 +292,111 @@
 
     </div>
 
-</div>
+</div>--}}
 
 
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
 
+{{--<div id="wrapper">
+    <nav class="navbar  navbar-expand-sm bg-primary navbar-dark">
 
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+        </ul>
 
-
-<!-- Page Content -->
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"></h1>
-
-                @yield('content')
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-</div>
-<!-- /#page-wrapper -->
-
-</div>
+    </nav>
+</div>--}}
 <!-- /#wrapper -->
+
+
+<nav class="navbar  navbar-expand-sm bg-primary navbar-dark">
+
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">
+        <img src="/images/LogoDirel.png" alt="Logo" style="width:70px;">
+    </a>
+
+    <!-- Toggler/collapsible Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav" >
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Gestione Utenti
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Utenti</a>
+                    <a class="dropdown-item" href="#">Nuovo Utente</a>
+                </div>
+            </li>
+            {{--<li class="nav-item">
+                <a class="nav-link" href="#">Gestione Utenti</a>
+            </li>--}}
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Gestione Clienti
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Clienti</a>
+                    <a class="dropdown-item" href="#">Nuovo Cliente</a>
+                </div>
+            </li>
+            {{--<li class="nav-item">
+                <a class="nav-link" href="#">Gestione Clienti</a>
+            </li>--}}
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Gestione Agenzie
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Agenzie</a>
+                    <a class="dropdown-item" href="#">Nuova Agenzia</a>
+                </div>
+            </li>
+            {{--<li class="nav-item">
+                <a class="nav-link" href="#">Gestione Agenzie</a>
+            </li>--}}
+        </ul>
+    </div>
+    <!-- /div navbar-collapse -->
+
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"></h1>
+
+            @yield('content')
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+
+
+
 
 <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
+
 
 
 @yield('footer')
