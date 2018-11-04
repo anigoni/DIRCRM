@@ -339,8 +339,8 @@
                     Gestione Utenti
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Utenti</a>
-                    <a class="dropdown-item" href="#">Nuovo Utente</a>
+                    <a class="dropdown-item" href="{{route('users.index')}}">Utenti</a>
+                    <a class="dropdown-item" href="{{route('users.create')}}">Nuovo Utente</a>
                 </div>
             </li>
             {{--<li class="nav-item">

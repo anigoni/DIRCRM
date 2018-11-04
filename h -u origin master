@@ -1,0 +1,41 @@
+[33mcommit 75178518b90608a5d711d5c1298eb6d86645a916[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: a.anigoni@gmail.com <a.anigoni@gmail.com>
+Date:   Sun Oct 28 20:26:44 2018 +0100
+
+    users page working without adding files
+
+[33mcommit 9e9dc715c6853e97837800f558e316d4c36ea760[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: a.anigoni@gmail.com <a.anigoni@gmail.com>
+Date:   Tue Oct 9 06:02:13 2018 +0200
+
+    html form LaravelCollective setted up
+
+[33mcommit bb412da69b27850dab43129f8e4b552955526411[m
+Author: a.anigoni@gmail.com <a.anigoni@gmail.com>
+Date:   Sun Sep 30 11:06:11 2018 +0200
+
+    Admin Master Page setup
+
+[33mcommit c405b682138658837398292092134e217056b331[m
+Author: a.anigoni@gmail.com <a.anigoni@gmail.com>
+Date:   Wed Aug 29 13:02:57 2018 +0200
+
+    DB SCHEMA STARTED
+
+[33mcommit 18ab68822de0aaa2b7b7f671af072b60de7fcf7e[m
+Author: a.anigoni@gmail.com <a.anigoni@gmail.com>
+Date:   Sat Aug 25 11:48:25 2018 +0200
+
+    modified AppServiceProvider.php with defautl string length
+
+[33mcommit bb7ce9ac68620b202d9d02b3fe9681d9e8644859[m
+Author: anigoni <a.anigoni@gmail.com>
+Date:   Sat Aug 25 09:27:17 2018 +0000
+
+    after the make:auth
+
+[33mcommit 23ae54e943dc670d46575cbc669470f4f2639876[m
+Author: anigoni <a.anigoni@gmail.com>
+Date:   Fri Aug 24 14:12:44 2018 +0000
+
+    Laravel 5.6

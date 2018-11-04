@@ -11,7 +11,7 @@
                 <th>Nome</th>
                 <th>email</th>
                 <th>Ruolo</th>
-                <th>Attivo</th>
+                <th>Stato</th>
                 <th>Creato</th>
                 <th>Modificato</th>
             </tr>
@@ -25,7 +25,11 @@
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
-                    <td>{{$user->role->name}}</td>
+                    @if($user->role)
+                        <td>{{$user->role->name}}</td>
+                    @else
+                        <td>Not Selected</td>
+                    @endif
                     <td>{{$user->is_active==1 ? 'Attivo': 'Non Attivo'}}</td>
                     <td>{{$user->created_at->diffForHumans()}}</td>
                     <td>{{$user->updated_at->diffForHumans()}}</td>

@@ -25,9 +25,11 @@ Route::get('/admin', function() {
 
 });
 
-//route per gestione USERS
-Route::resource('/admin/users', 'AdminUsersController');
+//Route per gestione USERS
+Route::get('/admin/users', 'AdminUsersController@index')->name('users');
 
 //Route per gestione AGENCIES
 Route::resource('/admin/agencies', 'AdminAgenciesController');
 
+//Route per gestione USERS
+Route::resource('/admin/users', 'AdminUsersController');
