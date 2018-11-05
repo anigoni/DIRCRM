@@ -20,6 +20,7 @@
     <div class="form-group">
         {!! Form::label('role_id', 'Ruolo:') !!}
         {!! Form::select('role_id', array(''=>'Choose options') + $roles, null, ['class'=>'form-control']) !!}
+
     </div>
 
     <div class="form-group">
