@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UsersEditRequest;
 use App\Http\Requests\UsersRequest;
 use App\Role;
 use App\User;
@@ -47,10 +48,18 @@ class AdminUsersController extends Controller
      */
     public function store(UsersRequest $request)
     {
-        //return all the Data from the request
-        //return $request->all();
 
-        $input = $request->all();
+        if (trim($request->password) == ''){
+
+            $input = $request->except('password'); //if password field is emtpy, grab everything except password field
+
+        }else{
+
+            $input = $request->all();//grab every field from form
+            $input['password'] = bcrypt($request->password);
+
+        }
+
 
 
         if ($file = $request->file('photo_id')){
@@ -61,7 +70,6 @@ class AdminUsersController extends Controller
 
         }
 
-        $input['password'] = bcrypt($request->password);
 
         User::create($input);
 
@@ -106,9 +114,38 @@ class AdminUsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UsersEditRequest $request, $id)
     {
         //
+
+        $user = User::findOrFail($id);
+
+        if (trim($request->password) == ''){
+
+            $input = $request->except('password'); //if password field is emtpy, grab everything except password field
+
+        }else{
+
+            $input = $request->all();//grab every field from form
+            $input['password'] = bcrypt($request->password);
+
+        }
+
+
+
+        if ($file = $request->file('photo_id')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $photo = Photo::create(['file'=>$name]); //creo record nella tabella "Photo"
+            $input['photo_id'] = $photo->id;//una volta creato record nella tab "Photo", la variabile $photo, contiene id del record appena creato.
+
+        }
+
+        $user->update($input);
+
+        return redirect('/admin/users');
+
+
     }
 
     /**
